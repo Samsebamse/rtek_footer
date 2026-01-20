@@ -1,24 +1,11 @@
 /**
  * Generic Footer Web Component
- * A reusable footer component that inherits styles from parent
- *
- * Usage:
- * <rtek-footer
- *   company="Company Name"
- *   founded="2020"
- *   facebook="https://facebook.com/company"
- *   instagram="https://instagram.com/company"
- *   x="https://x.com/company"
- *   snapchat="https://snapchat.com/add/company"
- *   linkedin="https://linkedin.com/company/name"
- *   developer="Developer Name"
- *   developer-url="https://developer.com"
- * ></rtek-footer>
+ * A minimal footer component for copyright and social links
  */
 
 class RTekFooter extends HTMLElement {
   static get observedAttributes() {
-    return ['company', 'founded', 'facebook', 'instagram', 'x', 'snapchat', 'linkedin', 'developer', 'developer-url'];
+    return ['company', 'founded', 'facebook', 'instagram', 'x', 'snapchat', 'linkedin', 'developer', 'developer-url', 'align'];
   }
 
   constructor() {
@@ -70,6 +57,13 @@ class RTekFooter extends HTMLElement {
     return this.getAttribute('developer-url') || '';
   }
 
+  get align() {
+    const val = this.getAttribute('align') || 'center';
+    if (val === 'start' || val === 'left') return 'flex-start';
+    if (val === 'end' || val === 'right') return 'flex-end';
+    return 'center';
+  }
+
   render() {
     const currentYear = new Date().getFullYear();
     const yearRange = !this.founded || this.founded === String(currentYear)
@@ -98,30 +92,27 @@ class RTekFooter extends HTMLElement {
         :host {
           display: block;
           font-family: inherit;
+          color: inherit;
+          padding: 0;
+          margin: 0;
         }
 
-        footer {
-          background: inherit;
-          color: inherit;
-          text-align: center;
-          padding: 2rem 0;
+        .container {
+          display: flex;
+          flex-direction: column;
+          align-items: ${this.align};
         }
 
         .socials {
           display: flex;
-          justify-content: center;
-          gap: 1rem;
-          margin-bottom: 1rem;
+          gap: 2rem;
+          margin-bottom: 0.5rem;
         }
 
         .socials a {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: inherit;
           color: inherit;
           cursor: pointer;
           transition: opacity 0.2s ease;
@@ -142,7 +133,7 @@ class RTekFooter extends HTMLElement {
         }
 
         .copyright {
-          font-size: 0.875rem;
+          margin: 0;
         }
 
         .copyright a {
@@ -154,18 +145,14 @@ class RTekFooter extends HTMLElement {
         .copyright a:visited {
           color: inherit;
         }
-
-        .copyright a:hover {
-          color: inherit;
-        }
       </style>
 
-      <footer>
+      <div class="container">
         ${socials.length > 0 ? `<div class="socials">${socials.join('')}</div>` : ''}
         <p class="copyright">
           &copy; ${yearRange}${this.company ? ` ${this.company}` : ''}${this.developer ? ` | ${this.developerUrl ? `<a href="${this.developerUrl}" target="_blank" rel="noopener">${this.developer}</a>` : this.developer}` : ''}
         </p>
-      </footer>
+      </div>
     `;
   }
 

@@ -44,10 +44,12 @@
     .footer-wrapper {
       background: #0f172a;
       color: white;
+      padding: 0.5rem 1rem;
     }
     .footer-wrapper-gold {
       background: #3D3228;
       color: #FDF8F3;
+      padding: 0.5rem 1rem;
     }
   </style>
 </head>
@@ -57,21 +59,21 @@
     <p>A generic footer web component. Inherits all styles from parent.</p>
 
     <h2>Installation</h2>
-    <pre>&lt;script src="https://cdn.jsdelivr.net/npm/@rtek/footer"&gt;&lt;/script&gt;</pre>
+    <pre>&lt;script src="https://cdn.jsdelivr.net/npm/rtek-footer"&gt;&lt;/script&gt;</pre>
 
     <h2>Usage</h2>
     <p>Wrap the component in a styled container:</p>
 
     <div class="example">
-      <div class="example-label">Dark theme</div>
+      <div class="example-label">Dark theme (centered)</div>
       <div class="footer-wrapper">
         <rtek-footer
           company="Expert Partner AS"
           founded="2020"
           instagram="https://instagram.com/epklima"
           facebook="https://facebook.com/epklima"
-          developer="r-TEK"
-          developer-url="https://r-tek.no"
+          developer="r-TEK.io"
+          developer-url="https://r-tek.io"
         ></rtek-footer>
       </div>
     </div>
@@ -82,20 +84,34 @@
     founded="2020"
     instagram="https://instagram.com/epklima"
     facebook="https://facebook.com/epklima"
-    developer="r-TEK"
-    developer-url="https://r-tek.no"
+    developer="r-TEK.io"
+    developer-url="https://r-tek.io"
   &gt;&lt;/rtek-footer&gt;
 &lt;/div&gt;</pre>
 
     <div class="example">
-      <div class="example-label">Gold theme</div>
+      <div class="example-label">Gold theme (centered)</div>
       <div class="footer-wrapper-gold">
         <rtek-footer
           company="Pelinis"
           founded="2024"
           instagram="https://instagram.com/pelinis"
-          developer="r-TEK"
-          developer-url="https://r-tek.no"
+          developer="r-TEK.io"
+          developer-url="https://r-tek.io"
+        ></rtek-footer>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">Left-aligned</div>
+      <div class="footer-wrapper">
+        <rtek-footer
+          company="ByMico AS"
+          founded="2023"
+          facebook="https://facebook.com/bymico"
+          developer="r-TEK.io"
+          developer-url="https://r-tek.io"
+          align="start"
         ></rtek-footer>
       </div>
     </div>
@@ -119,7 +135,8 @@ x             - X (Twitter) URL
 snapchat      - Snapchat URL
 linkedin      - LinkedIn URL
 developer     - Developer/agency name
-developer-url - Developer website URL</pre>
+developer-url - Developer website URL
+align         - Content alignment: start, center (default), end</pre>
   </main>
 
   <script src="src/rtek-footer.js"></script>

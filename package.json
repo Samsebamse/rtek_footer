@@ -1,6 +1,6 @@
 {
-  "name": "@rtek/footer",
-  "version": "1.0.0",
+  "name": "rtek-footer",
+  "version": "1.1.0",
   "description": "A reusable footer web component for r-TEK client websites",
   "main": "dist/rtek-footer.min.js",
   "module": "src/rtek-footer.js",

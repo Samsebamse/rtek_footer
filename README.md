@@ -7,13 +7,7 @@ A lightweight, customizable footer web component that inherits styles from its p
 ### CDN (Recommended)
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/rtek-footer"></script>
-```
-
-### npm
-
-```bash
-npm install rtek-footer
+<script src="https://cdn.jsdelivr.net/gh/Samsebamse/rtek-footer@main/src/rtek-footer.js"></script>
 ```
 
 ## Usage

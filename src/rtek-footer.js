@@ -5,7 +5,7 @@
 
 class RTekFooter extends HTMLElement {
   static get observedAttributes() {
-    return ['company', 'founded', 'facebook', 'instagram', 'x', 'snapchat', 'linkedin', 'developer', 'developer-url', 'align', 'color', 'font-size'];
+    return ['company', 'founded', 'facebook', 'instagram', 'x', 'snapchat', 'linkedin', 'developer', 'developer-url', 'align', 'color', 'font-size', 'social-gap', 'gap'];
   }
 
   constructor() {
@@ -72,6 +72,14 @@ class RTekFooter extends HTMLElement {
     return this.getAttribute('font-size') || '';
   }
 
+  get socialGap() {
+    return this.getAttribute('social-gap') || '2rem';
+  }
+
+  get gap() {
+    return this.getAttribute('gap') || '0.5rem';
+  }
+
   render() {
     const currentYear = new Date().getFullYear();
     const yearRange = !this.founded || this.founded === String(currentYear)
@@ -114,8 +122,8 @@ class RTekFooter extends HTMLElement {
 
         .socials {
           display: flex;
-          gap: 2rem;
-          margin-bottom: 0.5rem;
+          gap: ${this.socialGap};
+          margin-bottom: ${this.gap};
         }
 
         .socials a {

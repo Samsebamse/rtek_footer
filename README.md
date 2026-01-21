@@ -44,6 +44,8 @@ The component inherits `font-family`, `color`, and `background` from its parent 
 | `align` | Content alignment: `start`, `center`, `end` | `"center"` |
 | `color` | Text color (overrides inherited) | `"#ffffff"` |
 | `font-size` | Font size | `"0.875rem"` |
+| `social-gap` | Horizontal gap between social icons (default: `2rem`) | `"1.5rem"` |
+| `gap` | Vertical gap between socials and copyright (default: `0.5rem`) | `"1rem"` |
 
 ## Examples
 
@@ -74,6 +76,19 @@ The component inherits `font-family`, `color`, and `background` from its parent 
 <rtek-footer
   company="My Company"
   founded="2023"
+></rtek-footer>
+```
+
+### Custom spacing
+
+```html
+<rtek-footer
+  company="My Company"
+  founded="2020"
+  facebook="https://facebook.com/mycompany"
+  instagram="https://instagram.com/mycompany"
+  social-gap="1rem"
+  gap="1.5rem"
 ></rtek-footer>
 ```
 

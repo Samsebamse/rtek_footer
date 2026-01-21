@@ -39,6 +39,7 @@ The component inherits `font-family`, `color`, and `background` from its parent 
 | `x` | X (Twitter) profile URL | `"https://x.com/acme"` |
 | `snapchat` | Snapchat profile URL | `"https://snapchat.com/add/acme"` |
 | `linkedin` | LinkedIn company URL | `"https://linkedin.com/company/acme"` |
+| `whatsapp` | WhatsApp link (wa.me format) | `"https://wa.me/1234567890"` |
 | `developer` | Developer/agency name | `"r-TEK"` |
 | `developer-url` | Developer website URL | `"https://r-tek.io"` |
 | `align` | Content alignment: `start`, `center`, `end` | `"center"` |

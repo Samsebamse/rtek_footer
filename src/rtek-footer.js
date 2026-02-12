@@ -256,7 +256,7 @@ class RTekFooter extends HTMLElement {
                 /* --- Grid --- */
                 .grid {
                     max-width: 87.5rem;
-                    margin: 0 auto 3rem;
+                    margin: 3rem auto;
                     display: grid;
                     grid-template-columns: ${this.gridColumns};
                     gap: 4rem;
@@ -272,6 +272,10 @@ class RTekFooter extends HTMLElement {
                     text-transform: uppercase;
                     letter-spacing: 0.2em;
                     margin: 0 0 1.5rem 0;
+                }
+
+                .contact h3 {
+                    padding-left: 2rem;
                 }
 
                 /* --- Brand --- */
@@ -341,6 +345,7 @@ class RTekFooter extends HTMLElement {
                 .contact-item-address a,
                 .contact-item-address span {
                     line-height: 1.8;
+                    text-align: left;
                 }
 
                 /* --- Hours --- */

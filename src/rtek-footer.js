@@ -286,7 +286,7 @@ class RTekFooter extends HTMLElement {
                 /* --- Brand --- */
 
                 .brand {
-                    padding-right: 3rem;
+                    padding-right: 8rem;
                 }
 
                 .brand-logo {

@@ -222,7 +222,7 @@ class RTekFooter extends HTMLElement {
                     ${this.fontSize ? `font-size: ${this.fontSize};` : ""}
                     ${this.bgColor ? `background: ${this.bgColor};` : ""}
                     ${border ? `border-top: 0.0625rem solid ${border};` : ""}
-                    ${this.hasGrid ? "padding: 5rem 4rem 0;" : "padding: 0;"}
+                    ${this.hasGrid ? "padding: 6rem 4rem 0;" : "padding: 0;"}
                     margin: 0;
                 }
 
@@ -251,6 +251,7 @@ class RTekFooter extends HTMLElement {
                     text-transform: uppercase;
                     letter-spacing: 0.2em;
                     margin: 0 0 1.5rem 0;
+                    padding-left: 2rem;
                 }
 
                 /* --- Brand --- */
@@ -327,6 +328,7 @@ class RTekFooter extends HTMLElement {
                     display: flex;
                     flex-direction: column;
                     gap: 0.75rem;
+                    padding-left: 2rem;
                 }
 
                 .hours-item {
@@ -404,6 +406,8 @@ class RTekFooter extends HTMLElement {
                         ${this.hasGrid ? "padding: 4rem 2rem 0;" : ""}
                     }
 
+                    h3 { padding-left: 0; }
+
                     .grid {
                         grid-template-columns: 1fr;
                         gap: 2.5rem;
@@ -429,6 +433,7 @@ class RTekFooter extends HTMLElement {
 
                     .hours-items {
                         display: inline-flex;
+                        padding-left: 0;
                     }
 
                     .hours-item {

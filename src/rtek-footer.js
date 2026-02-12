@@ -258,8 +258,8 @@ class RTekFooter extends HTMLElement {
                     max-width: 87.5rem;
                     margin: 3rem auto;
                     display: grid;
-                    grid-template-columns: 1fr 1fr 1fr;
-                    gap: 4rem;
+                    grid-template-columns: 1.5fr 1fr 1fr;
+                    gap: 6rem;
                     align-items: start;
                 }
 
@@ -275,12 +275,9 @@ class RTekFooter extends HTMLElement {
                 }
 
                 .contact h3 {
-                    display: flex;
-                    padding-left: 2rem;
                 }
 
                 .hours h3 {
-                    display: flex;
                 }
 
                 /* --- Brand --- */
@@ -446,6 +443,7 @@ class RTekFooter extends HTMLElement {
 
                     .brand {
                         max-width: 100%;
+                        padding-right: 0;
                     }
 
                     .brand-logo {

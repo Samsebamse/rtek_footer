@@ -211,7 +211,7 @@ class RTekFooter extends HTMLElement {
                     <span class="hours-time${h.closed ? " hours-closed" : ""}">${h.time}</span>
                 </div>`
             ).join("");
-            hoursHtml = `<div class="section">
+            hoursHtml = `<div class="section hours">
                 ${this.hoursTitle ? `<h3>${this.hoursTitle}</h3>` : ""}
                 <div class="hours-items">${rows}</div>
             </div>`;
@@ -255,7 +255,7 @@ class RTekFooter extends HTMLElement {
 
                 /* --- Grid --- */
                 .grid {
-                    max-width: 75rem;
+                    max-width: 87.5rem;
                     margin: 3rem auto;
                     display: grid;
                     grid-template-columns: ${this.gridColumns};
@@ -274,7 +274,9 @@ class RTekFooter extends HTMLElement {
                     margin: 0 0 1.5rem 0;
                 }
 
-                .contact h3 {
+                .contact h3,
+                .hours h3 {
+                    display: flex;
                     padding-left: 2rem;
                 }
 

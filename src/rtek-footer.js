@@ -243,7 +243,7 @@ class RTekFooter extends HTMLElement {
                     ${this.fontSize ? `font-size: ${this.fontSize};` : ""}
                     ${this.bgColor ? `background: ${this.bgColor};` : ""}
                     ${border ? `border-top: 0.0625rem solid ${border};` : ""}
-                    ${this.hasGrid ? "padding: 6rem 4rem 0;" : "padding: 0;"}
+                    ${this.hasGrid ? "padding: 8rem 4rem 0;" : "padding: 0;"}
                     margin: 0;
                 }
 
@@ -256,7 +256,7 @@ class RTekFooter extends HTMLElement {
                 /* --- Grid --- */
                 .grid {
                     max-width: 87.5rem;
-                    margin: 0 auto 2rem;
+                    margin: 0 auto 3rem;
                     display: grid;
                     grid-template-columns: ${this.gridColumns};
                     gap: 4rem;
@@ -424,7 +424,7 @@ class RTekFooter extends HTMLElement {
 
                 @media (max-width: 40em) {
                     :host {
-                        ${this.hasGrid ? "padding: 4rem 2rem 0;" : ""}
+                        ${this.hasGrid ? "padding: 5rem 2rem 0;" : ""}
                     }
 
                     h3 { padding-left: 0; }

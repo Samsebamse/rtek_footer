@@ -1,144 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>rtek-footer Component Demo</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: Arial, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-    main {
-      flex: 1;
-      padding: 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-    h1 { margin-bottom: 1rem; }
-    h2 { margin: 2rem 0 1rem; color: #334155; }
-    pre {
-      background: #1e293b;
-      color: #e2e8f0;
-      padding: 1rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      font-size: 0.875rem;
-    }
-    .example {
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      margin: 1rem 0;
-      overflow: hidden;
-    }
-    .example-label {
-      background: #f1f5f9;
-      padding: 0.5rem 1rem;
-      font-size: 0.875rem;
-      color: #64748b;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    .footer-wrapper {
-      background: #0f172a;
-      color: white;
-      padding: 0.5rem 1rem;
-    }
-    .footer-wrapper-gold {
-      background: #3D3228;
-      color: #FDF8F3;
-      padding: 0.5rem 1rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rtek-footer Component Demo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+        main {
+            flex: 1;
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        h1 { margin-bottom: 0.5rem; font-size: 2rem; }
+        h2 { margin: 3rem 0 1rem; color: #334155; font-size: 1.25rem; }
+        p { color: #64748b; margin-bottom: 1rem; line-height: 1.6; }
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.25rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .example {
+            border: 1px solid #e2e8f0;
+            border-radius: 0.5rem;
+            margin: 1rem 0 2rem;
+            overflow: hidden;
+        }
+        .example-label {
+            background: #f1f5f9;
+            padding: 0.5rem 1rem;
+            font-size: 0.8rem;
+            color: #64748b;
+            border-bottom: 1px solid #e2e8f0;
+            font-weight: 500;
+        }
+        .josefin { font-family: 'Josefin Sans', sans-serif; }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <main>
-    <h1>rtek-footer Component</h1>
-    <p>A generic footer web component. Inherits all styles from parent.</p>
+    <main>
+        <h1>rtek-footer</h1>
+        <p>Generic footer web component with optional brand, contact, hours, social links, and copyright sections. Backward compatible — omit new attributes for the original minimal footer.</p>
 
-    <h2>Installation</h2>
-    <pre>&lt;script src="https://cdn.jsdelivr.net/gh/Samsebamse/rtek-footer@main/src/rtek-footer.js"&gt;&lt;/script&gt;</pre>
+        <h2>Installation</h2>
+        <pre>&lt;script src="https://cdn.jsdelivr.net/gh/Samsebamse/rtek-footer@main/src/rtek-footer.js"&gt;&lt;/script&gt;</pre>
 
-    <h2>Usage</h2>
-    <p>Wrap the component in a styled container:</p>
+        <!-- Full example: Pelinis style -->
+        <h2>Full Footer (Pelinis style)</h2>
+        <div class="example">
+            <div class="example-label">Brown + gold theme &mdash; brand, contact, hours, social, copyright</div>
+            <div class="josefin">
+                <rtek-footer
+                    company="Pelinis"
+                    founded="2018"
+                    logo="https://pelinis.com/images/logo.png"
+                    logo-height="7.5rem"
+                    tagline="Premium quality nuts, butters, and oils from Kosovo. Sourced with care, crafted with passion."
+                    contact-title="Contact"
+                    phone="+383 45 420 990"
+                    email="info@pelinis.com"
+                    address="Rr. Hakif Zejnullahu|Prishtina 10000|Kosova"
+                    address-url="https://maps.app.goo.gl/aasSr9n744or7deRA"
+                    hours-title="Hours"
+                    hours='[{"day":"Mon - Fri:","time":"10:00 - 19:00"},{"day":"Saturday:","time":"10:00 - 18:00"},{"day":"Sunday:","time":"Closed","closed":true}]'
+                    instagram="https://www.instagram.com/pelinis_ks/"
+                    facebook="https://www.facebook.com/peliniis"
+                    whatsapp="https://wa.me/38345420990"
+                    developer="r-TEK.io"
+                    developer-url="https://r-tek.io"
+                    bg-color="#4a3728"
+                    color="rgba(253, 248, 243, 0.7)"
+                    accent-color="#c4a35a"
+                    border-color="rgba(253, 248, 243, 0.1)"
+                    align="center"
+                    social-gap="1.5rem"
+                    gap="1rem"
+                ></rtek-footer>
+            </div>
+        </div>
 
-    <div class="example">
-      <div class="example-label">Dark theme (centered)</div>
-      <div class="footer-wrapper">
-        <rtek-footer
-          company="Expert Partner AS"
-          founded="2020"
-          instagram="https://instagram.com/epklima"
-          facebook="https://facebook.com/epklima"
-          developer="r-TEK.io"
-          developer-url="https://r-tek.io"
-        ></rtek-footer>
-      </div>
-    </div>
+        <!-- Full example: Bymico style -->
+        <h2>Full Footer (Bymico style)</h2>
+        <div class="example">
+            <div class="example-label">Dark navy + blue accent theme</div>
+            <rtek-footer
+                company="Bymico AS"
+                founded="2023"
+                logo="https://bymico.no/images/BYMICO_AS_text.svg"
+                logo-height="6rem"
+                tagline="Tverrfaglig bedrift som driver med taksering og entreprenørvirksomhet."
+                contact-title="Kontakt"
+                phone="+47 930 25 344"
+                email="post@bymico.no"
+                address="Glynitveien 30|1400 Ski|Norge"
+                address-url="https://maps.app.goo.gl/gWmD2bUsnNbPyZQM6"
+                hours-title="Åpningstider"
+                hours='[{"day":"Man - Fre:","time":"09:00 - 17:00"},{"day":"Lørdag:","time":"Stengt","closed":true},{"day":"Søndag:","time":"Stengt","closed":true}]'
+                facebook="https://www.facebook.com/profile.php?id=61557126651727"
+                developer="r-TEK.io"
+                developer-url="https://r-tek.io"
+                bg-color="#1a1f2c"
+                color="rgba(247, 247, 247, 0.7)"
+                accent-color="#6ba3e3"
+                border-color="rgba(247, 247, 247, 0.1)"
+                align="center"
+                social-gap="1.5rem"
+                gap="1rem"
+            ></rtek-footer>
+        </div>
 
-    <pre>&lt;div style="background: #0f172a; color: white;"&gt;
-  &lt;rtek-footer
-    company="Expert Partner AS"
-    founded="2020"
-    instagram="https://instagram.com/epklima"
-    facebook="https://facebook.com/epklima"
-    developer="r-TEK.io"
-    developer-url="https://r-tek.io"
-  &gt;&lt;/rtek-footer&gt;
-&lt;/div&gt;</pre>
+        <!-- Minimal (backward compat) -->
+        <h2>Minimal (backward compatible)</h2>
+        <div class="example">
+            <div class="example-label">Social + copyright only &mdash; no grid sections</div>
+            <div style="background: #0f172a; color: rgba(255,255,255,0.7); padding: 1rem;">
+                <rtek-footer
+                    company="Expert Partner AS"
+                    founded="2020"
+                    facebook="https://facebook.com/epklima"
+                    developer="r-TEK.io"
+                    developer-url="https://r-tek.io"
+                    align="center"
+                    social-gap="1.5rem"
+                    gap="1rem"
+                ></rtek-footer>
+            </div>
+        </div>
 
-    <div class="example">
-      <div class="example-label">Gold theme (centered)</div>
-      <div class="footer-wrapper-gold">
-        <rtek-footer
-          company="Pelinis"
-          founded="2024"
-          instagram="https://instagram.com/pelinis"
-          developer="r-TEK.io"
-          developer-url="https://r-tek.io"
-        ></rtek-footer>
-      </div>
-    </div>
+        <h2>Attributes</h2>
+        <pre>Brand
+  logo          - Logo image URL
+  logo-height   - Logo height (default: 6rem)
+  tagline       - Description text below logo
 
-    <div class="example">
-      <div class="example-label">Left-aligned</div>
-      <div class="footer-wrapper">
-        <rtek-footer
-          company="ByMico AS"
-          founded="2023"
-          facebook="https://facebook.com/bymico"
-          developer="r-TEK.io"
-          developer-url="https://r-tek.io"
-          align="start"
-        ></rtek-footer>
-      </div>
-    </div>
+Contact
+  contact-title - Section heading (e.g. "Contact")
+  phone         - Phone number (auto tel: link)
+  email         - Email address (auto mailto: link)
+  address       - Pipe-separated lines (e.g. "Street|City|Country")
+  address-url   - Google Maps URL for address link
 
-    <div class="example">
-      <div class="example-label">Minimal (no socials, no developer)</div>
-      <div class="footer-wrapper">
-        <rtek-footer
-          company="ByMico"
-          founded="2023"
-        ></rtek-footer>
-      </div>
-    </div>
+Hours
+  hours-title   - Section heading (e.g. "Hours")
+  hours         - JSON: [{"day":"Mon-Fri:","time":"09-17"},{"day":"Sun:","time":"Closed","closed":true}]
 
-    <h2>Attributes</h2>
-    <pre>company       - Company name
-founded       - Year founded (shows range if different from current year)
-facebook      - Facebook URL
-instagram     - Instagram URL
-x             - X (Twitter) URL
-snapchat      - Snapchat URL
-linkedin      - LinkedIn URL
-developer     - Developer/agency name
-developer-url - Developer website URL
-align         - Content alignment: start, center (default), end</pre>
-  </main>
+Social
+  facebook, instagram, tiktok, x, snapchat, linkedin, whatsapp
 
-  <script src="src/rtek-footer.js"></script>
+Theming
+  bg-color      - Footer background color
+  color         - Text color
+  accent-color  - Headings, icons, hover, "closed" label
+  border-color  - Top border + bottom bar border
+
+Layout
+  company       - Company name (copyright)
+  founded       - Year founded (year range)
+  developer     - Developer name
+  developer-url - Developer website
+  align         - start | center (default) | end
+  font-size     - Base font size
+  social-gap    - Gap between social icons
+  gap           - Gap between social row and copyright</pre>
+    </main>
+
+    <script src="src/rtek-footer.js"></script>
 </body>
 </html>

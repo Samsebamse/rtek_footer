@@ -1,6 +1,6 @@
 # rtek-footer
 
-A lightweight, customizable footer web component that inherits styles from its parent container.
+A lightweight, customizable footer web component with optional brand, contact, hours, social links, and copyright sections. Uses Shadow DOM — backward compatible, omit new attributes for the original minimal footer.
 
 ## Installation
 
@@ -12,102 +12,143 @@ A lightweight, customizable footer web component that inherits styles from its p
 
 ## Usage
 
-The component inherits `font-family`, `color`, and `background` from its parent element. Wrap it in a styled container to control the appearance.
+### Full footer
 
 ```html
-<!-- Dark theme example -->
-<div style="background: #0f172a; color: white;">
-  <rtek-footer
-    company="Your Company"
-    founded="2020"
-    facebook="https://facebook.com/yourcompany"
-    instagram="https://instagram.com/yourcompany"
-    developer="Developer Name"
-    developer-url="https://developer.com"
-  ></rtek-footer>
-</div>
+<rtek-footer
+  company="Pelinis"
+  founded="2018"
+  logo="/images/logo.png"
+  logo-height="7.5rem"
+  tagline="Premium quality nuts, butters, and oils."
+  contact-title="Contact"
+  phone="+383 45 420 990"
+  email="info@pelinis.com"
+  address="Rr. Hakif Zejnullahu|Prishtina 10000|Kosova"
+  address-url="https://maps.app.goo.gl/aasSr9n744or7deRA"
+  hours-title="Hours"
+  hours='[{"day":"Mon - Fri:","time":"10:00 - 19:00"},{"day":"Saturday:","time":"10:00 - 18:00"},{"day":"Sunday:","time":"Closed","closed":true}]'
+  instagram="https://www.instagram.com/pelinis_ks/"
+  facebook="https://www.facebook.com/peliniis"
+  whatsapp="https://wa.me/38345420990"
+  developer="r-TEK.io"
+  developer-url="https://r-tek.io"
+  bg-color="#4a3728"
+  color="rgba(253, 248, 243, 0.7)"
+  accent-color="#c4a35a"
+  border-color="rgba(253, 248, 243, 0.1)"
+  align="center"
+  social-gap="1.5rem"
+  gap="1rem"
+></rtek-footer>
 ```
 
-## Attributes
-
-| Attribute | Description | Example |
-|-----------|-------------|---------|
-| `company` | Company name displayed in copyright | `"Acme Inc"` |
-| `founded` | Year founded (shows range if different from current year) | `"2020"` |
-| `facebook` | Facebook page URL | `"https://facebook.com/acme"` |
-| `instagram` | Instagram profile URL | `"https://instagram.com/acme"` |
-| `x` | X (Twitter) profile URL | `"https://x.com/acme"` |
-| `snapchat` | Snapchat profile URL | `"https://snapchat.com/add/acme"` |
-| `linkedin` | LinkedIn company URL | `"https://linkedin.com/company/acme"` |
-| `whatsapp` | WhatsApp link (wa.me format) | `"https://wa.me/1234567890"` |
-| `developer` | Developer/agency name | `"r-TEK"` |
-| `developer-url` | Developer website URL | `"https://r-tek.io"` |
-| `align` | Content alignment: `start`, `center`, `end` | `"center"` |
-| `color` | Text color (overrides inherited) | `"#ffffff"` |
-| `font-size` | Font size | `"0.875rem"` |
-| `social-gap` | Horizontal gap between social icons (default: `2rem`) | `"1.5rem"` |
-| `gap` | Vertical gap between socials and copyright (default: `0.5rem`) | `"1rem"` |
-
-## Examples
-
-### Centered (default)
+### Minimal (backward compatible)
 
 ```html
 <rtek-footer
   company="My Company"
   founded="2020"
   facebook="https://facebook.com/mycompany"
+  developer="r-TEK.io"
+  developer-url="https://r-tek.io"
   align="center"
 ></rtek-footer>
 ```
 
-### Left-aligned
+## Attributes
+
+### Brand
+
+| Attribute | Description | Default |
+|-----------|-------------|---------|
+| `logo` | Logo image URL | — |
+| `logo-height` | Logo height | `6rem` |
+| `tagline` | Description text below logo | — |
+
+### Contact
+
+| Attribute | Description | Notes |
+|-----------|-------------|-------|
+| `contact-title` | Section heading | e.g. "Contact" |
+| `phone` | Phone number | Auto `tel:` link |
+| `email` | Email address | Auto `mailto:` link |
+| `address` | Pipe-separated lines | e.g. `"Street\|City\|Country"` |
+| `address-url` | Google Maps URL | Makes address clickable |
+
+### Hours
+
+| Attribute | Description | Notes |
+|-----------|-------------|-------|
+| `hours-title` | Section heading | e.g. "Hours" |
+| `hours` | JSON array | `[{"day":"Mon-Fri:","time":"09-17"},{"day":"Sun:","time":"Closed","closed":true}]` |
+
+### Social
+
+| Attribute | Description |
+|-----------|-------------|
+| `facebook` | Facebook page URL |
+| `instagram` | Instagram profile URL |
+| `tiktok` | TikTok profile URL |
+| `x` | X (Twitter) profile URL |
+| `snapchat` | Snapchat profile URL |
+| `linkedin` | LinkedIn company URL |
+| `whatsapp` | WhatsApp link (wa.me format) |
+
+### Theming
+
+| Attribute | Description | Default |
+|-----------|-------------|---------|
+| `bg-color` | Footer background color | `transparent` |
+| `color` | Text color | inherited |
+| `accent-color` | Headings, icons, hover, "closed" label | inherited |
+| `border-color` | Top border + bottom bar border | none |
+
+### Layout
+
+| Attribute | Description | Default |
+|-----------|-------------|---------|
+| `company` | Company name (copyright) | — |
+| `founded` | Year founded (year range) | — |
+| `developer` | Developer name | — |
+| `developer-url` | Developer website | — |
+| `align` | `start` / `center` / `end` | `center` |
+| `font-size` | Base font size | inherited |
+| `social-gap` | Gap between social icons | `2rem` |
+| `gap` | Gap between social row and copyright | `0.5rem` |
+
+## Slots
+
+The component supports a default `<slot>` for project-specific content above the grid sections:
 
 ```html
-<rtek-footer
-  company="My Company"
-  founded="2020"
-  align="start"
-></rtek-footer>
+<rtek-footer company="Pelinis" ...>
+  <div class="my-custom-section">
+    Custom content here (e.g. document downloads)
+  </div>
+</rtek-footer>
 ```
 
-### Minimal (no socials)
+## Responsive
 
-```html
-<rtek-footer
-  company="My Company"
-  founded="2023"
-></rtek-footer>
-```
-
-### Custom spacing
-
-```html
-<rtek-footer
-  company="My Company"
-  founded="2020"
-  facebook="https://facebook.com/mycompany"
-  instagram="https://instagram.com/mycompany"
-  social-gap="1rem"
-  gap="1.5rem"
-></rtek-footer>
-```
+The grid sections adapt automatically:
+- **Desktop**: `1.5fr 1fr 1fr` (brand wider)
+- **< 64em**: `repeat(2, 1fr)` (brand spans full width)
+- **< 40em**: `1fr` (single column, centered)
 
 ## Styling
 
-The component uses Shadow DOM but inherits key styles from its parent:
-
-- `font-family` - Inherits from parent
-- `color` - Inherits from parent
-- `background` - Inherits from parent
-
-To style the footer, wrap it in a container with your desired styles:
+The component uses Shadow DOM but inherits `font-family` from its parent. Wrap it in a container with your desired font:
 
 ```html
-<footer style="background: #1a1a1a; color: #cccccc; font-family: 'Helvetica', sans-serif; padding: 2rem;">
-  <rtek-footer company="Styled Co" founded="2020"></rtek-footer>
-</footer>
+<div class="josefin">
+  <rtek-footer company="Pelinis" ...></rtek-footer>
+</div>
 ```
+
+## Demo
+
+Open [demo.html](demo.html) to see all variants.
 
 ## License
 

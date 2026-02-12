@@ -243,8 +243,8 @@ class RTekFooter extends HTMLElement {
                     ${this.fontSize ? `font-size: ${this.fontSize};` : ""}
                     ${this.bgColor ? `background: ${this.bgColor};` : ""}
                     ${border ? `border-top: 0.0625rem solid ${border};` : ""}
-                    ${this.hasGrid ? "padding: 8rem 4rem 0;" : "padding: 0;"}
-                    ${this.hasGrid ? "margin-top: 6rem;" : "margin: 0;"}
+                    ${this.hasGrid ? "padding: 10rem 4rem 0;" : "padding: 0;"}
+                    margin: 0;
                 }
 
                 /* --- Slot (project-specific content above grid) --- */
@@ -272,10 +272,6 @@ class RTekFooter extends HTMLElement {
                     text-transform: uppercase;
                     letter-spacing: 0.2em;
                     margin: 0 0 1.5rem 0;
-                }
-
-                .contact h3 {
-                    padding-left: 2rem;
                 }
 
                 /* --- Brand --- */

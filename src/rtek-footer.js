@@ -257,10 +257,10 @@ class RTekFooter extends HTMLElement {
                 .grid {
                     max-width: 87.5rem;
                     margin: 3rem auto;
-                    display: grid;
-                    grid-template-columns: ${this.gridColumns};
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-start;
                     gap: 3rem;
-                    align-items: start;
                 }
 
                 /* --- Headings --- */
@@ -424,8 +424,12 @@ class RTekFooter extends HTMLElement {
                 /* --- Responsive --- */
                 @media (max-width: 64em) {
                     .grid {
-                        grid-template-columns: repeat(2, 1fr);
+                        flex-wrap: wrap;
                         gap: 3rem;
+                    }
+
+                    .section, .brand {
+                        flex: 1 1 40%;
                     }
                 }
 
@@ -435,9 +439,14 @@ class RTekFooter extends HTMLElement {
                     }
 
                     .grid {
-                        grid-template-columns: 1fr;
+                        flex-direction: column;
+                        align-items: center;
                         gap: 2.5rem;
                         text-align: center;
+                    }
+
+                    .section, .brand {
+                        flex: 1 1 100%;
                     }
 
                     .brand {
